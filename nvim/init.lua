@@ -1,4 +1,28 @@
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        vim.o.updatetime = 300
+    end,
+})
+
 -- Bootstrap lazy.nvim
+-- Disable arrow keys in all modes
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+vim.keymap.set({'n', 'i', 'v'}, '<Up>', '<Nop>', opts)
+vim.keymap.set({'n', 'i', 'v'}, '<Down>', '<Nop>', opts)
+vim.keymap.set({'n', 'i', 'v'}, '<Left>', '<Nop>', opts)
+vim.keymap.set({'n', 'i', 'v'}, '<Right>', '<Nop>', opts)
+
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.api.nvim_set_hl(0, "LspReferenceText",  { bg = "#3b4252" })
+        vim.api.nvim_set_hl(0, "LspReferenceRead",  { bg = "#3b4252" })
+        vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#3b4252" })
+    end,
+})
 vim.g.mapleader = " "   -- makes <leader> = Space
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -21,13 +45,6 @@ local opts ={}
 
 require("lazy").setup("plugins")
 local builtin = require("telescope.builtin")
-local config = require("nvim-treesitter.configs")
-config.setup({
-    ensure_installed = {"lua","javascript","c","html"},
-    highlight={enable=true},
-    indent={enable=true},
-
-})
 
 vim.keymap.set('n','<C-p>', builtin.find_files, {})
 vim.keymap.set('n','<C-g>', builtin.live_grep, {})
@@ -47,7 +64,7 @@ vim.keymap.set('n', '<C-Tab>', ':tabnext<CR>', { silent = true })
 vim.keymap.set('n', '<C-S-Tab>', ':tabprevious<CR>', { silent = true })
 
 require("catppuccin").setup()
-require("vim-options")
+
 vim.cmd.colorscheme "catppuccin"
 
 
@@ -81,49 +98,26 @@ vim.wo.number = true
 
 -- show relative line numbers
 vim.wo.relativenumber = true
--- ==========================
--- 📑 Custom Tabline
--- ==========================
-vim.o.showtabline = 2  -- always show tabline
 
-vim.o.tabline = [[%!v:lua.MyTabLine()]]
-
-function MyTabLine()
-  local s = ''
-  for i = 1, vim.fn.tabpagenr('$') do
-    -- select the right highlight group
-    if i == vim.fn.tabpagenr() then
-      s = s .. '%#TabLineSel#'
-    else
-      s = s .. '%#TabLine#'
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("GeminiRetab", { clear = true }),
+  callback = function() 
+    if vim.opt_local.expandtab:get() then
+      vim.cmd [[retab]]
     end
+  end,
+})
 
-    -- tab number
-    s = s .. ' ' .. i .. ':'
+vim.keymap.set('n', '<leader>rt', function()
+  vim.cmd [[retab]]
+  vim.cmd [[w]]
+end, { desc = 'Retab and Save' })
 
-    -- get buffer name in the tab
-    local buflist = vim.fn.tabpagebuflist(i)
-    local winnr = vim.fn.tabpagewinnr(i)
-    local name = vim.fn.fnamemodify(vim.fn.bufname(buflist[winnr]), ':t')
 
-    if name == '' then
-      name = '[No Name]'
-    end
+vim.opt.tabstop = 4        -- number of visual spaces per TAB
+vim.opt.shiftwidth = 4     -- number of spaces used for autoindent
+vim.opt.softtabstop = 4    -- number of spaces a <Tab> counts for while editing
+vim.opt.expandtab = true   -- convert tabs to spaces
 
-    s = s .. ' ' .. name .. ' '
-  end
-
-  s = s .. '%#TabLineFill#'
-  return s
-end
-
--- ==========================
--- 🎨 Highlight Colors (Optional)
--- ==========================
-vim.cmd [[
-  highlight TabLineSel guifg=#ffffff guibg=#444444 gui=bold
-  highlight TabLine guifg=#aaaaaa guibg=#222222
-  highlight TabLineFill guibg=#111111
-]]
-
+vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", italic = true })
 

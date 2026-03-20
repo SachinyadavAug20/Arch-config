@@ -1,0 +1,8 @@
+[opener]
+default = [
+  { run = "nvim \"$1\"", block = true, for = "unix" }
+]
+
+[open]
+prepend = ["default"]
+

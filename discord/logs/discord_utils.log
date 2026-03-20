@@ -1,0 +1,42 @@
+[2025-Nov-29 22:53:24.278 +05:30][55625:55625][info ] Logging initialized
+[2025-Nov-30 19:54:38.042 +05:30][ 4092: 4092][info ] Logging initialized
+[2025-Dec-04 20:16:01.256 +05:30][42546:42546][info ] Logging initialized
+[2025-Dec-05 20:10:10.002 +05:30][23515:23515][info ] Logging initialized
+[2025-Dec-05 20:10:52.444 +05:30][23515:23573][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 172.707678ms
+[2025-Dec-05 20:10:52.467 +05:30][23515:23573][info ] Long Queue Time for store 'Utils'. Task 'SetGameCandidateOverrides' queued for 174.147038ms
+[2025-Dec-05 20:10:52.467 +05:30][23515:23573][info ] Long Queue Time for store 'Utils'. Task 'SetGameDetectionCallback' queued for 172.582801ms
+[2025-Dec-05 20:10:52.467 +05:30][23515:23573][info ] Long Queue Time for store 'Utils'. Task 'SetGameDetectionErrorCallback' queued for 170.750653ms
+[2025-Dec-08 13:28:44.460 +05:30][26403:26403][info ] Logging initialized
+[2025-Dec-20 16:59:04.205 +05:30][ 7762: 7762][info ] Logging initialized
+[2025-Dec-24 20:07:01.412 +05:30][22288:22288][info ] Logging initialized
+[2026-Jan-05 22:17:39.136 +05:30][25323:25323][info ] Logging initialized
+[2026-Jan-10 23:44:39.439 +05:30][ 9267: 9267][info ] Logging initialized
+[2026-Jan-10 23:44:48.921 +05:30][ 9267: 9290][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 51.313594ms
+[2026-Jan-14 21:12:21.833 +05:30][26978:26978][info ] Logging initialized
+[2026-Jan-14 21:12:32.193 +05:30][26978:27001][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 51.993877ms
+[2026-Jan-14 22:34:42.466 +05:30][ 7544: 7544][info ] Logging initialized
+[2026-Jan-15 14:57:20.055 +05:30][19685:19685][info ] Logging initialized
+[2026-Jan-16 13:39:19.612 +05:30][22095:22095][info ] Logging initialized
+[2026-Jan-25 23:01:47.914 +05:30][44052:44052][info ] Logging initialized
+[2026-Jan-25 23:02:07.979 +05:30][44052:44118][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 55.231835ms
+[2026-Jan-26 17:57:15.203 +05:30][42489:42489][info ] Logging initialized
+[2026-Jan-29 13:10:19.815 +05:30][17243:17243][info ] Logging initialized
+[2026-Jan-31 13:47:33.055 +05:30][29577:29577][info ] Logging initialized
+[2026-Feb-06 21:29:20.743 +05:30][16942:16942][info ] Logging initialized
+[2026-Feb-06 21:58:40.408 +05:30][16942:16970][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 53.168313ms
+[2026-Feb-07 12:54:12.663 +05:30][12730:12730][info ] Logging initialized
+[2026-Feb-07 15:49:16.799 +05:30][12730:12754][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 56.338467ms
+[2026-Feb-07 20:23:51.841 +05:30][12730:12754][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 82.992275ms
+[2026-Feb-07 22:49:02.108 +05:30][12730:12754][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 56.340854ms
+[2026-Feb-08 20:52:46.543 +05:30][43046:43046][info ] Logging initialized
+[2026-Feb-08 22:09:51.820 +05:30][43046:43067][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 50.50999ms
+[2026-Feb-08 22:55:01.832 +05:30][43046:43067][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 56.42134ms
+[2026-Feb-22 19:54:25.042 +05:30][63120:63120][info ] Logging initialized
+[2026-Feb-25 17:29:17.399 +05:30][ 9328: 9328][info ] Logging initialized
+[2026-Feb-25 20:24:04.299 +05:30][ 9328: 9358][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 64.960373ms
+[2026-Feb-25 21:35:17.449 +05:30][ 9328: 9358][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 54.479243ms
+[2026-Mar-03 21:49:50.438 +05:30][ 4184: 4184][info ] Logging initialized
+[2026-Mar-06 21:05:18.780 +05:30][35037:35037][info ] Logging initialized
+[2026-Mar-13 18:12:00.750 +05:30][ 2403: 2403][info ] Logging initialized
+[2026-Mar-14 09:53:15.792 +05:30][47305:47305][info ] Logging initialized
+[2026-Mar-14 09:53:22.957 +05:30][47305:48050][info ] Long Queue Time for store 'Utils'. Task 'SetObservedGamesCallback2' executed for 54.23011ms
