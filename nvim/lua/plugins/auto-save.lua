@@ -1,14 +1,15 @@
 return {
   "pocco81/auto-save.nvim",
+  event = { "InsertLeave", "TextChanged" },
   config = function()
     require("auto-save").setup({
       enabled = true,
       execution_message = {
-        message = function() -- message on save
+        message = function()
           return ("AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"))
         end,
       },
-      trigger_events = {"InsertLeave", "TextChanged"},
+      trigger_events = { "InsertLeave" },
       condition = function(buf)
         local fn = vim.fn
         local utils = require("auto-save.utils.data")
@@ -19,8 +20,7 @@ return {
         return false
       end,
       write_all_buffers = false,
-      debounce_delay = 135,
+      debounce_delay = 500,
     })
   end
 }
-

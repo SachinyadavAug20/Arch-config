@@ -1,10 +1,12 @@
 return {
-  -- 🔹 LSP completion source
   { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
 
-  -- 🔹 Snippet engine
   {
     "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
@@ -14,7 +16,6 @@ return {
     end,
   },
 
-  -- 🔹 Main completion plugin
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -22,7 +23,6 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
     },
@@ -49,7 +49,6 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-          -- Tab navigation
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
@@ -77,15 +76,7 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
-
-        experimental = {
-          ghost_text = true, -- 👻 inline ghost text
-        },
       })
-
-      -- Optional: make ghost text look nice
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", italic = true })
     end,
   },
 }
-
